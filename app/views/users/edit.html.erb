@@ -1,0 +1,26 @@
+<h2>Editar Usuario</h2>
+<%= display_base_errors(@user) %>
+<%= form_for @user do |form| %>
+<%= form.label :name, "Nombre" %>
+<%= form.text_field :name %>
+<%= form.label :lastname, "Apellido" %>
+<%= form.text_field :lastname %>
+<%= form.label :username, "Nombre de Usuario" %>
+<%= form.text_field :username %>
+<%= form.label :password, "Contraseña" %>
+<%= form.password_field :password %>
+<%= form.label :profile_id, "Perfil" %>
+<%= form.select :profile_id, options_from_collection_for_select(Profile.all, :id, :name) %>
+<%= form.label :cellphone, "Celular" %>
+<div class="input-prepend">
+	<span class="add-on">+595</span>
+	<%= form.text_field :cellphone, :class => "input-medium" %>
+</div>
+<%= form.label(:send_notification, :class => "checkbox") do %>
+	<%= form.check_box :send_notification %> Enviar notificaciones?
+<% end %>
+<p class="buttons">
+	<button type="submit" class="btn btn-primary btn-large">Actualizar</button>
+	<%= link_to("Eliminar", @user, :method => :delete, :class => "btn btn-large btn-danger", :confirm => "Está seguro que desea eliminar el usuario?") if @user.id != @current_user.id %>
+</p>
+<% end %>

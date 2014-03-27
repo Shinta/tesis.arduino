@@ -1,0 +1,7 @@
+<% broadcast "/alerts/show" do %>
+$('#alert_<%= @alert.id %>').remove();
+<% if params[:main_alarm_off] %>
+	$('.alert.main-alert').remove();
+<% end %>
+$('#main_content').prepend("<%=j render_alert(@alert) %>");
+<% end %>

@@ -1,0 +1,22 @@
+<h2>Editar Perfil</h2>
+<%= display_base_errors(@profile) %>
+<%= form_for @profile do |form| %>
+<%= form.label :name, "Nombre" %>
+<%= form.text_field :name %>
+<fieldset>
+	<legend>Usuarios</legend>
+	<label class="checkbox inline" for="profile_permissions_users_manage">
+		<%= check_box_tag "profile[permissions][users][manage]", 1, (@profile.permissions["users"]["manage"] rescue false) %> Administrar
+	</label>
+</fieldset>
+<fieldset>
+	<legend>Perfiles</legend>
+	<label class="checkbox inline" for="profile_permissions_profiles_manage">
+		<%= check_box_tag "profile[permissions][profiles][manage]", 1, (@profile.permissions["profiles"]["manage"] rescue false) %> Administrar
+	</label>
+</fieldset>
+<p class="buttons">
+	<button type="submit" class="btn btn-primary btn-large">Actualizar</button>
+	<%= link_to "Eliminar", @profile, :method => :delete, :class => "btn btn-large btn-danger", :confirm => "Está seguro que desea eliminar el perfil?" %>
+</p>
+<% end %>

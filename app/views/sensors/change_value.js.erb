@@ -1,0 +1,3 @@
+<% broadcast "/sensors/update" do %>
+$('#sensor_<%= @sensor.id %>').replaceWith("<%=j show_ui(@sensor) %>");
+<% end %>

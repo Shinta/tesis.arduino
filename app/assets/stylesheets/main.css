@@ -1,0 +1,20 @@
+.form-horizontal .controls {
+	margin-left: 40%;
+}
+
+.form-horizontal .control-label {
+	width: 35%;
+}
+@media (max-width: 480px) { 
+
+   .hero-unit{
+        margin-left:-20px;
+        margin-right:-20px;
+      }
+   .form-horizontal .controls {
+        margin-left: 0;
+      }
+  }
+.login_well {
+	margin-top: 2em;
+}

@@ -1,0 +1,5 @@
+.text_field_conf input[type='text'] {
+	margin-right: 0.6em;
+	height: 1.6em;
+	font-size: 20px;
+}

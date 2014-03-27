@@ -1,0 +1,11 @@
+<h2>Historial de Alertas</h2>
+<table class="table table-hover table-condensed">
+	<tbody>
+		<% for alert in @alerts %>
+		<tr<%= table_style(alert) %>>
+			<td><%= alert.description.html_safe %></td>
+			<td>hace <%= time_ago_in_words(alert.created_at) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

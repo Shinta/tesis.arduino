@@ -1,0 +1,4 @@
+<h2><%= @sensor_group.name %></h2>
+<% for sensor in @sensors -%>
+	<%= show_ui(sensor) %>
+<% end -%>

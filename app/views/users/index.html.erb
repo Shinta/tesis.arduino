@@ -1,0 +1,5 @@
+<ul class="unstyled text-center span4" id="sensor_groups">
+	<% for sensor_group in @sensor_groups -%>
+	<li><%= link_to sensor_group.name, sensor_group_path(sensor_group), :class => "btn btn-block btn-large" %></li>
+	<% end -%>
+</ul>

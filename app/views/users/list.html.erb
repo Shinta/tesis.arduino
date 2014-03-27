@@ -1,0 +1,22 @@
+<h2>Lista de Usuarios</h2>
+<p><%= link_to "Crear nuevo", :new_user, :class => "btn" %></p>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Nombre</th>
+			<th>Usuario</th>
+			<th>Perfil</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% for user in @users %>
+		<tr>
+			<td><%= user.id %></td>
+			<td><%= link_to user.full_name, edit_user_path(user) %></td>
+			<td><%= user.username %></td>
+			<td><%= link_to user.profile.name, edit_profile_path(user.profile) %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
